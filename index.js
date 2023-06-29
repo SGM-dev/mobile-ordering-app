@@ -50,5 +50,25 @@ function addToCart(itemId) {
       });
     }
   }
-  console.log(cartArray);
+  renderCartHtml(cartArray);
+}
+
+function renderCartHtml(cart) {
+  let cartHtml = ``;
+  cart.forEach(function (item) {
+    cartHtml += `
+    <div class="cart-item-wrapper">
+    <div class="cart-item-detail">
+      <h2 class="cart-item-name">${item.name}</h2>
+      <p>X ${item.quantity}</p>
+        <p class="cart-remove-btn" data-remove-item="${item.id}">
+        remove
+      </p>
+    </div>
+    <h3>$ ${item.price * item.quantity}</h3>
+  </div>
+</div>`;
+  });
+
+  document.querySelector(".cart").innerHTML = cartHtml;
 }
