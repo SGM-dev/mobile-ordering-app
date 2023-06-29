@@ -68,20 +68,17 @@ p {
 .item-graphic {
   color: #000;
   text-align: center;
-  font-size: 78.72px;
+  font-size: 50px;
   font-family: Inter;
   font-style: normal;
   font-weight: 400;
-  line-height: 98.4px;
-  letter-spacing: -1.574px;
 }
 
 .item-title {
   color: #000;
-  font-size: 28px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 400;
-  line-height: 16.8px;
 }
 
 .item-desc {
@@ -89,13 +86,18 @@ p {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
   display: flex;
   width: 358px;
   flex-direction: column;
-  flex-shrink: 0;
   padding: 5px;
   padding-left: 0;
+}
+
+.item-price {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .add-btn {
