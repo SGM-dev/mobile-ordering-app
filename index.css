@@ -187,3 +187,19 @@ p {
   font-style: normal;
   font-weight: 400;
 }
+
+.purchase-btn {
+  color: #fff;
+  font-size: 16px;
+  font-family: Verdana;
+  font-style: normal;
+  font-weight: 700;
+  padding: 18px 175px 18px 194px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 3px;
+  background: #16db99;
+  border: none;
+  margin-top: 50px;
+  cursor: pointer;
+}
