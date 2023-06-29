@@ -31,17 +31,24 @@ function renderMenuHtml() {
 renderMenuHtml();
 
 function addToCart(itemId) {
-  menuArray.forEach(function (item) {
-    if (item.id == itemId) {
+  // Check if the item already exists in the cartArray
+  const existingItem = cartArray.find((item) => item.id == itemId);
+  if (existingItem) {
+    // Item already exists, update its quantity
+    existingItem.quantity++;
+  } else {
+    // Item doesn't exist, add it to the cartArray
+    const newItem = menuArray.find((item) => item.id == itemId);
+    if (newItem) {
       cartArray.push({
-        name: item.name,
-        ingredients: item.ingredients,
-        id: item.id,
-        price: item.price,
-        emoji: item.emoji,
+        name: newItem.name,
+        ingredients: newItem.ingredients,
+        id: newItem.id,
+        price: newItem.price,
+        emoji: newItem.emoji,
         quantity: 1,
       });
     }
-  });
+  }
   console.log(cartArray);
 }
