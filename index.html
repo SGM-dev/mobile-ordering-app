@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Jimmy’s Diner</title>
     <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,7 +33,25 @@
                 <h3 class="item-price">$14</h3>
               </div>
             </div>
-           <button class="add-btn">+</button>
+            <button class="add-btn">+</button>
+          </div>
+        </section>
+        <section class="cart-section">
+          <h2 class="cart-title">Your order</h2>
+          <div class="cart">
+            <div class="cart-item-wrapper">
+              <div class="cart-item-detail">
+                <h2 class="cart-item-name">Pizza</h2>
+                <p class="cart-remove-btn" data-remove-item="${item.uuid}">
+                  remove
+                </p>
+              </div>
+              <h3>$14</h3>
+            </div>
+            </div>
+            <div class="cart-total">
+                <h2>Total</h2>
+                <h3 class="cart-price">$14</h3>
           </div>
         </section>
       </main>
