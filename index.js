@@ -1,6 +1,14 @@
 import { menuArray } from "./data.js";
 
-function getMenuHtml() {
+document.addEventListener("click", function (e) {
+  if (e.target.dataset.addItem) {
+    addToCart(e.target.dataset.addItem);
+  }
+});
+
+const cartArray = [];
+
+function renderMenuHtml() {
   let menuHtml = ``;
   menuArray.forEach(function (item) {
     menuHtml += `
@@ -17,11 +25,23 @@ function getMenuHtml() {
   </div>`;
   });
 
-  return menuHtml;
+  document.getElementById("menu").innerHTML = menuHtml;
 }
 
-function render() {
-  document.getElementById("menu").innerHTML = getMenuHtml();
-}
+renderMenuHtml();
 
-render()
+function addToCart(itemId) {
+  menuArray.forEach(function (item) {
+    if (item.id == itemId) {
+      cartArray.push({
+        name: item.name,
+        ingredients: item.ingredients,
+        id: item.id,
+        price: item.price,
+        emoji: item.emoji,
+        quantity: 1,
+      });
+    }
+  });
+  console.log(cartArray);
+}
