@@ -20,7 +20,7 @@ function renderMenuHtml() {
         <div>
             <h2 class="item-title">${item.name}</h2>
             <p class="item-desc">${item.ingredients}</p>
-            <h3 class="item-price">${item.price}</h3>
+            <h3 class="item-price">$ ${item.price}</h3>
         </div>
     </div>
     <button class="add-btn" data-add-item="${item.id}">+</button>
@@ -53,6 +53,10 @@ function addToCart(itemId) {
     }
   }
   renderCartHtml(cartArray);
+
+  document.querySelector(".cart-price").innerHTML = `$ ${getTotalPrice(
+    cartArray
+  )}`;
 }
 
 function renderCartHtml(cart) {
@@ -89,4 +93,16 @@ function removeFromCart(itemId) {
     }
   }
   renderCartHtml(cartArray);
+  document.querySelector(".cart-price").innerHTML = `$ ${getTotalPrice(
+    cartArray
+  )}`;
+}
+
+function getTotalPrice(cart) {
+  let totalPrice = 0;
+  cart.forEach(function (item) {
+    totalPrice += item.price * item.quantity;
+  });
+
+  return totalPrice;
 }
