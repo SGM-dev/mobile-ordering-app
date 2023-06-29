@@ -3,6 +3,8 @@ import { menuArray } from "./data.js";
 document.addEventListener("click", function (e) {
   if (e.target.dataset.addItem) {
     addToCart(e.target.dataset.addItem);
+  } else if (e.target.dataset.removeItem) {
+    removeFromCart(e.target.dataset.removeItem);
   }
 });
 
@@ -57,18 +59,34 @@ function renderCartHtml(cart) {
   let cartHtml = ``;
   cart.forEach(function (item) {
     cartHtml += `
-    <div class="cart-item-wrapper">
-    <div class="cart-item-detail">
-      <h2 class="cart-item-name">${item.name}</h2>
-      <p>X ${item.quantity}</p>
-        <p class="cart-remove-btn" data-remove-item="${item.id}">
-        remove
-      </p>
-    </div>
-    <h3>$ ${item.price * item.quantity}</h3>
+<div class="cart-item-wrapper">
+  <div class="cart-item-detail">
+     <h2 class="cart-item-name">${item.name}</h2>
+     <p>X ${item.quantity}</p>
+      <p class="cart-remove-btn" data-remove-item="${item.id}">
+      remove
+     </p>
+   </div>
+   <h3>$ ${item.price * item.quantity}</h3>
   </div>
 </div>`;
   });
 
   document.querySelector(".cart").innerHTML = cartHtml;
+}
+
+function removeFromCart(itemId) {
+  const existingItemIndex = cartArray.findIndex(function (item) {
+    return itemId == item.id;
+  });
+
+  if (existingItemIndex !== -1) {
+    const existingItem = cartArray[existingItemIndex];
+    existingItem.quantity--;
+
+    if (existingItem.quantity === 0) {
+      cartArray.splice(existingItemIndex, 1);
+    }
+  }
+  renderCartHtml(cartArray);
 }
