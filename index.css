@@ -171,7 +171,7 @@ p {
 }
 
 .cart-total {
-  padding: 15px 30px;
+  padding: 15px 45px;
   display: flex;
   justify-content: space-between;
 }
@@ -204,6 +204,7 @@ p {
   border: none;
   margin-top: 50px;
   cursor: pointer;
+  margin: 10px 45px;
 }
 
 .payment-section {

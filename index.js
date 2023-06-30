@@ -74,6 +74,7 @@ function addToCart(itemId) {
   document.querySelector(".cart-price").innerHTML = `$ ${getTotalPrice(
     cartArray
   )}`;
+  orderCompleteSection.classList.add("hidden");
 }
 
 function renderCartHtml(cart) {
