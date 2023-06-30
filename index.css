@@ -34,7 +34,7 @@ p {
 .header-title {
   position: absolute;
   top: 0;
-  padding: 46px;
+  padding: 45px;
   color: #fff;
   letter-spacing: 1;
 }
@@ -56,7 +56,7 @@ p {
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid #d2d2d2;
-  padding: 45px;
+  padding: 30px 45px;
 }
 
 .item-details {
@@ -124,7 +124,7 @@ p {
 
 .cart-title {
   margin: 0 0 60px 0;
-  padding-top: 45px;
+  padding-top: 30px;
 }
 
 .cart {
@@ -169,7 +169,7 @@ p {
 }
 
 .cart-total {
-  padding: 15px 45px;
+  padding: 15px 30px;
   display: flex;
   justify-content: space-between;
 }
