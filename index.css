@@ -2,6 +2,7 @@
   margin: 0;
   font-family: "Smythe", cursive;
   box-sizing: border-box;
+  
 }
 
 .content-wrapper {
@@ -111,6 +112,7 @@ p {
   font-weight: 200;
   cursor: pointer;
   font-size: 20px;
+  user-select: none;
 }
 
 .cart-section {
@@ -159,6 +161,7 @@ p {
   font-style: normal;
   font-weight: 400;
   cursor: pointer;
+  user-select: none;
 }
 
 .cart-item-wrapper > h3 {
