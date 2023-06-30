@@ -74,7 +74,6 @@ function addToCart(itemId) {
   document.querySelector(".cart-price").innerHTML = `$ ${getTotalPrice(
     cartArray
   )}`;
-  orderCompleteSection.classList.add("hidden");
 }
 
 function renderCartHtml(cart) {
@@ -93,6 +92,10 @@ function renderCartHtml(cart) {
   </div>
 </div>`;
   });
+  let drink = cart.find((item) => item.id == 2);
+  if (drink && cart.length > 1) {
+    cartHtml += `<p class="meal-deal">Meal Deal Applied!</p>`;
+  }
 
   document.querySelector(".cart").innerHTML = cartHtml;
 }
@@ -121,11 +124,17 @@ function removeFromCart(itemId) {
 
 function getTotalPrice(cart) {
   let totalPrice = 0;
+  let drink = cart.find((item) => item.id == 2);
+
   cart.forEach(function (item) {
     totalPrice += item.price * item.quantity;
   });
 
-  return totalPrice;
+  if (drink && cart.length > 1) {
+    return Math.floor(totalPrice * 0.9);
+  } else {
+    return totalPrice;
+  }
 }
 
 function renderModal() {
@@ -155,7 +164,8 @@ function renderStatus() {
   const customerName = paymentFormData.get("fullName");
 
   cartArray.length = 0;
-  orderCompleteSection.innerHTML = `          <div class="order-status">
+  orderCompleteSection.innerHTML = `          
+  <div class="order-status">
     <p class="order-text">Thanks, ${customerName}! Your order is on its way!</p>
   </div>`;
 }

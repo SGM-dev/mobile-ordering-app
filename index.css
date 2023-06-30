@@ -26,9 +26,16 @@ img {
 h1,
 h2,
 h3,
+h4,
 p {
   margin: 0;
   font-weight: 400px;
+}
+
+h4 {
+  font-weight: 100;
+  padding: 10px 0;
+  font-style: italic;
 }
 
 .header-title {
@@ -223,7 +230,6 @@ p {
   color: #000;
   padding: 25px;
   flex-direction: column;
-  flex-direction: column;
 }
 
 .modal-title {
@@ -235,7 +241,7 @@ p {
   padding: 20px 45px;
 }
 
-input {
+.card-input {
   padding: 15px 25px;
   color: #757575;
   font-size: 20px;
@@ -288,5 +294,11 @@ form {
   font-family: Smythe;
   font-style: normal;
   font-weight: 400;
-
 }
+
+.meal-deal {
+  text-align: center;
+  margin: 0 auto;
+}
+
+
