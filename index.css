@@ -205,7 +205,7 @@ p {
 }
 
 .payment-section {
-  display: flex;
+  display: none;
   position: fixed;
   margin: auto;
   top: 0;

@@ -1,14 +1,23 @@
 import { menuArray } from "./data.js";
+const cartSection = document.getElementById("cart-section");
+const paymentSection = document.getElementById("payment-section");
+const cartArray = [];
 
 document.addEventListener("click", function (e) {
   if (e.target.dataset.addItem) {
     addToCart(e.target.dataset.addItem);
   } else if (e.target.dataset.removeItem) {
     removeFromCart(e.target.dataset.removeItem);
+  } else if (e.target.id === "purchase-btn") {
+    renderModal();
+  } else if (
+    !(e.target === paymentSection) &&
+    !(e.target == document.querySelector(".payment-modal")) &&
+    !isDescendant(paymentSection, e.target)
+  ) {
+    closeModal();
   }
 });
-
-const cartArray = [];
 
 function renderMenuHtml() {
   let menuHtml = ``;
@@ -105,4 +114,23 @@ function getTotalPrice(cart) {
   });
 
   return totalPrice;
+}
+
+function renderModal() {
+  paymentSection.style.display = "flex";
+}
+
+function isDescendant(parent, child) {
+  let node = child.parentNode;
+  while (node != null) {
+    if (node === parent) {
+      return true;
+    }
+    node = node.parentNode;
+  }
+  return false;
+}
+
+function closeModal() {
+  paymentSection.style.display = "none";
 }
