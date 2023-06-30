@@ -23,20 +23,45 @@
         </div>
       </header>
       <main>
-        <section class="menu" id="menu">
-
-        </section>
+        <section class="menu" id="menu"></section>
         <section class="cart-section">
           <h2 class="cart-title">Your order</h2>
-          <div class="cart">
-            
-
-          </div>
+          <div class="cart"></div>
           <div class="cart-total">
             <h2>Total</h2>
             <h3 class="cart-price">0</h3>
           </div>
           <button class="purchase-btn">Complete order</button>
+        </section>
+        <section class="payment-section">
+          <div class="payment-modal">
+            <h2 class="modal-title">Enter card details</h2>
+            <form id="payment-form">
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Enter your name"
+                required
+              />
+              <input
+                type="number"
+                minlength="16"
+                maxlength="16"
+                name="cardNumber"
+                placeholder="Enter card number"
+                required
+              />
+              <input
+                type="password"
+                minlength="3"
+                maxlength="3"
+                name="cardCvv"
+                placeholder="Enter CVV"
+                required
+              />
+              <button type="submit" class="modal-btn">Pay</button>
+            </form>
+          </div>
         </section>
       </main>
     </div>

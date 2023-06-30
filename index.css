@@ -1,4 +1,4 @@
-body {
+* {
   margin: 0;
   font-family: "Smythe", cursive;
   box-sizing: border-box;
@@ -202,4 +202,63 @@ p {
   border: none;
   margin-top: 50px;
   cursor: pointer;
+}
+
+.payment-section {
+  display: flex;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 524px;
+  width: 524px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 200px 2px #666;
+  background-color: #fff;
+  color: #000;
+  padding: 25px;
+  flex-direction: column;
+  flex-direction: column;
+}
+
+.modal-title {
+  color: #000;
+  font-size: 24px;
+  font-family: Verdana;
+  font-style: normal;
+  font-weight: 700;
+  padding: 20px 45px;
+}
+
+input {
+  padding: 15px 25px;
+  color: #757575;
+  font-size: 20px;
+  font-family: Verdana;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 31.119px;
+  margin: 0 0 25px;
+  border-radius: 3.89px;
+  border: 1.297px solid #757575;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-btn {
+  border-radius: 3.89px;
+  background: #16db99;
+  color: #fff;
+  font-size: 20px;
+  font-family: Verdana;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 31.119px;
+  border: 0;
+  padding: 15px;
 }
