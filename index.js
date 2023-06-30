@@ -154,6 +154,7 @@ function renderStatus() {
   const paymentFormData = new FormData(paymentForm);
   const customerName = paymentFormData.get("fullName");
 
+  cartArray.length = 0;
   orderCompleteSection.innerHTML = `          <div class="order-status">
     <p class="order-text">Thanks, ${customerName}! Your order is on its way!</p>
   </div>`;
