@@ -262,3 +262,7 @@ form {
   border: 0;
   padding: 15px;
 }
+
+.hidden {
+  display: none;
+}

@@ -62,7 +62,7 @@ function addToCart(itemId) {
     }
   }
   renderCartHtml(cartArray);
-
+  cartSection.classList.remove("hidden");
   document.querySelector(".cart-price").innerHTML = `$ ${getTotalPrice(
     cartArray
   )}`;
@@ -102,6 +102,9 @@ function removeFromCart(itemId) {
     }
   }
   renderCartHtml(cartArray);
+  if (cartArray.length < 1) {
+    cartSection.classList.add("hidden");
+  }
   document.querySelector(".cart-price").innerHTML = `$ ${getTotalPrice(
     cartArray
   )}`;

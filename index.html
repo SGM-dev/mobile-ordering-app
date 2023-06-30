@@ -24,7 +24,7 @@
       </header>
       <main>
         <section class="menu" id="menu"></section>
-        <section class="cart-section" id="cart-section">
+        <section class="cart-section hidden" id="cart-section">
           <h2 class="cart-title">Your order</h2>
           <div class="cart"></div>
           <div class="cart-total">
@@ -44,9 +44,10 @@
                 required
               />
               <input
-                type="number"
-                minlength="16"
+                type="text"
                 maxlength="16"
+                minlength="16"
+                title="Please enter your 16 digit card number"
                 name="cardNumber"
                 placeholder="Enter card number"
                 required
@@ -55,6 +56,8 @@
                 type="password"
                 minlength="3"
                 maxlength="3"
+                pattern="\d{10}"
+                title="Please enter your 3 digit CVV"
                 name="cardCvv"
                 placeholder="Enter CVV"
                 required
