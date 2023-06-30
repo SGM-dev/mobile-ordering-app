@@ -2,7 +2,6 @@
   margin: 0;
   font-family: "Smythe", cursive;
   box-sizing: border-box;
-  
 }
 
 .content-wrapper {
@@ -268,4 +267,25 @@ form {
 
 .hidden {
   display: none;
+}
+
+.order-complete-section {
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.order-status {
+  padding: 50px 60px;
+  border-radius: 3px;
+  background: #ecfdf5;
+  text-align: center;
+}
+
+.order-text {
+  color: #065f46;
+  font-size: 25px;
+  font-family: Smythe;
+  font-style: normal;
+  font-weight: 400;
+
 }

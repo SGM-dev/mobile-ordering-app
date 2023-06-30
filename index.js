@@ -1,6 +1,7 @@
 import { menuArray } from "./data.js";
 const cartSection = document.getElementById("cart-section");
 const paymentSection = document.getElementById("payment-section");
+const paymentForm = document.getElementById("payment-form");
 const cartArray = [];
 
 document.addEventListener("click", function (e) {
@@ -17,6 +18,13 @@ document.addEventListener("click", function (e) {
   ) {
     closeModal();
   }
+});
+
+paymentForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  closeModal();
+  cartSection.classList.add("hidden");
+  renderStatus();
 });
 
 function renderMenuHtml() {
@@ -136,4 +144,16 @@ function isDescendant(parent, child) {
 
 function closeModal() {
   paymentSection.style.display = "none";
+}
+
+function renderStatus() {
+  const orderCompleteSection = document.getElementById(
+    "order-complete-section"
+  );
+  const paymentFormData = new FormData(paymentForm);
+  const customerName = paymentFormData.get("fullName");
+
+  orderCompleteSection.innerHTML = `          <div class="order-status">
+    <p class="order-text">Thanks, ${customerName}! Your order is on its way!</p>
+  </div>`;
 }
